@@ -18,7 +18,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Step 2: Update HTML
+      # Step 2: Update index html
       - name: Update HTML for Team Leader
         if: github.actor == 'anuragmad1'
         run: |
@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "### Updated by ${{ github.actor }} on $(date '+%Y-%m-%d %H:%M:%S') [Commit: $(git rev-parse --short HEAD)]" >> README.md
 
-      # Step 4: Commit Changes to index.html and README
+      # Step 4 Commit Changes 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
